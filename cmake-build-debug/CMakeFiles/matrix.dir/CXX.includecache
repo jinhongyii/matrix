@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/jinho/CLionProjects/matrix/BasicTest.cpp
+iostream
+-
+utility
+-
+string
+-
+functional
+-
+vector
+-
+unistd.h
+-
+ctime
+-
+matrix-blank.hpp
+C:/Users/jinho/CLionProjects/matrix/matrix-blank.hpp
+
+C:/Users/jinho/CLionProjects/matrix/matrix-blank.hpp
+utility
+-
+bits/stdc++.h
+-
+cstddef
+-
+initializer_list
+-
+utility
+-
+iterator
+-
+
