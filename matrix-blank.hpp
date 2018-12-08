@@ -56,14 +56,14 @@ namespace sjtu
             }
 		}
 
-		/*Matrix &operator=(const Matrix &o)
+		Matrix &operator=(const Matrix &o)
 		{
 			matrix=o.matrix;
-            return (*this);
-		}*/
+            //return (*this);
+		}
 
-		//template <class U>
-		/*Matrix &operator=(const Matrix<U> &o)
+		template <class U>
+		Matrix &operator=(const Matrix<U> &o)
 		{
             matrix.clear();
             matrix.resize(o.rowLength());
@@ -72,8 +72,8 @@ namespace sjtu
                     matrix[i].push_back(o(i,j));
                 }
             }
-            return (*this);
-		}*/
+            //return (*this);
+		}
 
 		/*Matrix(Matrix &&o) noexcept
 		{
@@ -374,7 +374,7 @@ namespace sjtu
 
 			bool operator!=(const iterator &o) const
 			{
-                return (*this)==o;
+                return !((*this)==o);
 			}
 		};
 
@@ -391,10 +391,15 @@ namespace sjtu
 		}
 
 		std::pair<iterator, iterator> subMatrix(std::pair<size_t, size_t> l, std::pair<size_t, size_t> r) {
-
+            static auto subM=Matrix(r.first-l.first+1,r.second-l.second+1);
+            for (auto i = l.first; i <= r.first; i++) {
+                for (auto j = l.second; j <= r.second; j++) {
+                    subM(i-l.first,j-l.second)=(*this)(i,j);
+                }
+            }
             std::pair<iterator, iterator> result;
-            result.first = begin() + l.first * columnLength() +l.second;
-            result.second = begin() + r.first * columnLength() + r.second;
+            result.first = subM.begin() ;
+            result.second = subM.end();
             return result;
         }
 	};

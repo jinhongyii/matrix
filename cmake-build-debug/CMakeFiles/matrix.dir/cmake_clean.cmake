@@ -1,9 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/matrix.dir/BasicTest.cpp.obj"
+  "CMakeFiles/matrix.dir/BasicTest.cpp.o"
   "matrix.pdb"
-  "matrix.exe"
-  "matrix.exe.manifest"
-  "libmatrix.dll.a"
+  "matrix"
 )
 
 # Per-language clean rules from dependency scanning.
